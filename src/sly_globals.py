@@ -40,4 +40,5 @@ for dataset in api.dataset.get_list(project_id):
     dataset_infos.append(dataset)
     video_infos.append(api.video.get_list(dataset.id))
 
-
+dataset_index = 0
+current_video = video_infos[dataset_index][0]

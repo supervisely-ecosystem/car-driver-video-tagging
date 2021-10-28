@@ -15,11 +15,14 @@ def main():
 
     data = {
         "userId": g.user_id,
-        "userLogin": g.user_login
+        "userLogin": g.user_login,
+        "projectName": g.project_info.name,
+        "datasetName": g.dataset_infos[g.dataset_index].name,
+        "videoName": g.current_video.name,
     }
 
     state = {
-        "videoId": g.video_infos[0][0].id,
+        "videoId": g.current_video.id,
         "currentFrame": 0
     }
 

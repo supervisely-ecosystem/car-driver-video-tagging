@@ -2,7 +2,17 @@
     <div class="fflex mt15" style="align-items: stretch">
         <div style="min-width: 310px; max-width: 310px;">
             <sly-card title="Info">
-                <div><b>Labeler</b>: {{data.userLogin}} (id={{data.userId}})</div>
+                <sly-field title="Labeler">
+                    <div>Login: {{data.userLogin}}</div>
+                    <div>ID: {{data.userId}}</div>
+                </sly-field>
+
+                <sly-field title="Video">
+                    <div>Project: {{data.projectName}}</div>
+                    <div>Dataset: {{data.datasetName}}</div>
+                    <div>Video: {{data.videoName}}</div>
+                    <div>Video ID: {{state.videoId}}</div>
+                </sly-field>
             </sly-card>
             <sly-card title="Sequence annotation"
                       subtitle="Attributes for entire video"
