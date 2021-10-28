@@ -91,13 +91,62 @@
                 </el-select>
             </sly-field>
         </sly-card>
-        <sly-card title="Current video"
-                  subtitle="Play entire video or preview frame-by-frame"
-                  class="ml15"
-                  style="width: 100%"
-        >
-            <sly-video :video-id="state.videoId" :frame.sync="state.currentFrame"/>
-        </sly-card>
+        <div style="width: 100%" class="ml15">
+            <div class="fflex">
+                <sly-field title="Video">
+                    <el-button size="small"
+                               class="regular"
+                               type="primary"
+                    >
+                        <i class="zmdi zmdi-arrow-left mr5"></i>Prev
+                    </el-button>
+                    <el-button
+                            size="small"
+                            class="regular"
+                            type="primary"
+                    >
+                        Next <i class="zmdi zmdi-arrow-right ml5"></i>
+                    </el-button>
+                </sly-field>
+                <sly-field title="Unrated" style="margin-left: 10px;">
+                    <el-button size="small"
+                               class="regular"
+                               type="primary"
+                    >
+                        <i class="zmdi zmdi-arrow-left mr5"></i>Prev
+                    </el-button>
+                    <el-button
+                            size="small"
+                            class="regular"
+                            type="primary"
+                    >
+                        Next <i class="zmdi zmdi-arrow-right ml5"></i>
+                    </el-button>
+                </sly-field>
+                <sly-field title="Annotations" style="margin-left: 10px;">
+                    <el-button size="small"
+                               class="regular"
+                               type="primary"
+                    >
+                        <i class="zmdi zmdi-floppy mr5"></i>Save
+                    </el-button>
+                    <el-button
+                            size="small"
+                            class="regular"
+                            type="primary"
+                    >
+                        <i class="zmdi zmdi-file mr5"></i> Load
+                    </el-button>
+                </sly-field>
+            </div>
+            <sly-card title="Current video"
+                      subtitle="Play entire video or preview frame-by-frame"
+                      style="width: 100%"
+                      class="mt10"
+            >
+                <sly-video :video-id="state.videoId" :frame.sync="state.currentFrame"/>
+            </sly-card>
+        </div>
     </div>
 
 
