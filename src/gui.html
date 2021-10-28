@@ -1,9 +1,30 @@
 <div>
     <div class="fflex mt15" style="align-items: stretch">
+        <div style="min-width: 310px; max-width: 310px;">
+            <sly-card title="Info">
+                <div><b>Labeler</b>: {{data.userLogin}} (id={{data.userId}})</div>
+            </sly-card>
+            <sly-card title="Sequence annotation"
+                      subtitle="Attributes for entire video"
+                      class="mt15"
+            >
+                <div><b>Labeler</b>: {{data.userLogin}} (id={{data.userId}})</div>
+            </sly-card>
+            <sly-card title="Frame-by-frame annotation"
+                      subtitle="Attributes for specific frames and frame ranges"
+                      class="mt15"
+            >
+                <div><b>Labeler</b>: {{data.userLogin}} (id={{data.userId}})</div>
+            </sly-card>
+        </div>
+        <sly-card title="Current video"
+                  subtitle="Play entire video or preview frame-by-frame"
+                  class="ml15"
+                  style="width: 100%"
+        >
+            <sly-video :video-id="state.videoId" :frame.sync="state.currentFrame" />
+        </sly-card>
     </div>
-    <sly-card title="Info"
-              subtitle="Labeler and video"
-              style="min-width: 310px; max-width: 310px;">
-        <div><b>Labeler</b>: {{data.userLogin}} (id={{data.userId}})</div>
-    </sly-card>
+
+
 </div>

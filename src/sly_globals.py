@@ -34,3 +34,10 @@ if project_info is None:  # for debug
     raise ValueError(f"Project with id={project_id} not found")
 project_meta = sly.ProjectMeta.from_json(api.project.get_meta(project_id))
 
+dataset_infos = []
+video_infos = []
+for dataset in api.dataset.get_list(project_id):
+    dataset_infos.append(dataset)
+    video_infos.append(api.video.get_list(dataset.id))
+
+

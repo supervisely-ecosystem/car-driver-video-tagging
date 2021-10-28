@@ -19,6 +19,8 @@ def main():
     }
 
     state = {
+        "videoId": g.video_infos[0][0].id,
+        "currentFrame": 0
     }
 
     initial_events = [
