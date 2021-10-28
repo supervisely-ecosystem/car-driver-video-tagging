@@ -19,11 +19,36 @@ def main():
         "projectName": g.project_info.name,
         "datasetName": g.dataset_infos[g.dataset_index].name,
         "videoName": g.current_video.name,
+
+        # video attributes
+        "glasses": g.glasses,
+        "mask": g.mask,
+        "race": g.race,
+        "gender": g.gender,
+
+        # frames attributes
+        "eyeVisibility": g.eye_visibility,
+        "eyeState": g.eye_state,
+        "driverAttentionState": g.driver_attention_state,
+        "faceBlocked": g.face_blocked,
+        "transition": g.transition,
     }
 
     state = {
         "videoId": g.current_video.id,
-        "currentFrame": 0
+        "currentFrame": 0,
+        # video attributes
+        "glasses": "",
+        "mask": "",
+        "race": "",
+        "gender": "",
+
+        # frames attributes
+        "eyeVisibility": "",
+        "eyeState": "",
+        "driverAttentionState": "",
+        "faceBlocked": "",
+        "transition": "",
     }
 
     initial_events = [

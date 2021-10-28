@@ -42,3 +42,16 @@ for dataset in api.dataset.get_list(project_id):
 
 dataset_index = 0
 current_video = video_infos[dataset_index][0]
+
+# video attributes
+glasses = []
+mask = []
+race = []
+gender = []
+
+# frames attributes
+eye_visibility = []
+eye_state = []
+driver_attention_state = []
+face_blocked = []
+transition = []

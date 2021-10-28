@@ -1,38 +1,102 @@
 <div>
     <div class="fflex mt15" style="align-items: stretch">
-        <div style="min-width: 310px; max-width: 310px;">
+        <div style="min-width: 250px; max-width: 250px;">
             <sly-card title="Info">
                 <sly-field title="Labeler">
-                    <div>Login: {{data.userLogin}}</div>
-                    <div>ID: {{data.userId}}</div>
+                    <div><span style="color: #5a6772">Login:</span> {{data.userLogin}}</div>
+                    <div><span style="color: #5a6772">ID:</span> {{data.userId}}</div>
                 </sly-field>
 
                 <sly-field title="Video">
-                    <div>Project: {{data.projectName}}</div>
-                    <div>Dataset: {{data.datasetName}}</div>
-                    <div>Video: {{data.videoName}}</div>
-                    <div>Video ID: {{state.videoId}}</div>
+                    <div><span style="color: #5a6772">Project:</span> {{data.projectName}}</div>
+                    <div><span style="color: #5a6772">Dataset:</span> {{data.datasetName}}</div>
+                    <div><span style="color: #5a6772">Video:</span> {{data.videoName}}</div>
+                    <div><span style="color: #5a6772">Video ID:</span> <a href="https://www.w3schools.com">{{state.videoId}}</a>
+                    </div>
                 </sly-field>
             </sly-card>
             <sly-card title="Sequence annotation"
                       subtitle="Attributes for entire video"
                       class="mt15"
             >
-                <div><b>Labeler</b>: {{data.userLogin}} (id={{data.userId}})</div>
+                <sly-field title="Glasses">
+                    <el-select v-model="state.glasses" placeholder="Select">
+                        <el-option
+                                v-for="item in data.glasses" :key="item" :label="item" :value="item">
+                        </el-option>
+                    </el-select>
+                </sly-field>
+                <sly-field title="Mask">
+                    <el-select v-model="state.mask" placeholder="Select">
+                        <el-option
+                                v-for="item in data.mask" :key="item" :label="item" :value="item">
+                        </el-option>
+                    </el-select>
+                </sly-field>
+                <sly-field title="Race">
+                    <el-select v-model="state.race" placeholder="Select">
+                        <el-option
+                                v-for="item in data.race" :key="item" :label="item" :value="item">
+                        </el-option>
+                    </el-select>
+                </sly-field>
+                <sly-field title="Gender">
+                    <el-select v-model="state.gender" placeholder="Select">
+                        <el-option
+                                v-for="item in data.gender" :key="item" :label="item" :value="item">
+                        </el-option>
+                    </el-select>
+                </sly-field>
             </sly-card>
-            <sly-card title="Frame-by-frame annotation"
-                      subtitle="Attributes for specific frames and frame ranges"
-                      class="mt15"
-            >
-                <div><b>Labeler</b>: {{data.userLogin}} (id={{data.userId}})</div>
-            </sly-card>
+
         </div>
+        <sly-card title="Frame-by-frame annotation"
+                  subtitle="Attributes for specific frames and frame ranges"
+                  class="ml15"
+                  style="min-width: 250px; max-width: 250px;"
+        >
+            <sly-field title="Eye visibility">
+                <el-select v-model="state.eyeVisibility" placeholder="Select">
+                    <el-option
+                            v-for="item in data.eyeVisibility" :key="item" :label="item" :value="item">
+                    </el-option>
+                </el-select>
+            </sly-field>
+            <sly-field title="Eye state">
+                <el-select v-model="state.eyeState" placeholder="Select">
+                    <el-option
+                            v-for="item in data.eyeState" :key="item" :label="item" :value="item">
+                    </el-option>
+                </el-select>
+            </sly-field>
+            <sly-field title="Drivera attention state">
+                <el-select v-model="state.driverAttentionState" placeholder="Select">
+                    <el-option
+                            v-for="item in data.driverAttentionState" :key="item" :label="item" :value="item">
+                    </el-option>
+                </el-select>
+            </sly-field>
+            <sly-field title="Face blocked">
+                <el-select v-model="state.faceBlocked" placeholder="Select">
+                    <el-option
+                            v-for="item in data.faceBlocked" :key="item" :label="item" :value="item">
+                    </el-option>
+                </el-select>
+            </sly-field>
+            <sly-field title="Transition">
+                <el-select v-model="state.transition" placeholder="Select">
+                    <el-option
+                            v-for="item in data.transition" :key="item" :label="item" :value="item">
+                    </el-option>
+                </el-select>
+            </sly-field>
+        </sly-card>
         <sly-card title="Current video"
                   subtitle="Play entire video or preview frame-by-frame"
                   class="ml15"
                   style="width: 100%"
         >
-            <sly-video :video-id="state.videoId" :frame.sync="state.currentFrame" />
+            <sly-video :video-id="state.videoId" :frame.sync="state.currentFrame"/>
         </sly-card>
     </div>
 
