@@ -1,18 +1,9 @@
 <div>
-    <el-row :gutter="20">
-        <el-col :span="12">
-            <sly-card title="Settings" subtitle="some description">
-                <sly-field title="Prefix" description="will be added to the beginning of the generated string">
-                    <el-input v-model="state.prefix"></el-input>
-                </sly-field>
-                <el-button style="margin-top: 10px;" @click="command('generate')"> Generate!</el-button>
-            </sly-card>
-        </el-col>
-
-        <el-col :span="12">
-            <sly-card title="Results" subtitle="See results here">
-                <div>Generated string: {{data.randomString}}</div>
-            </sly-card>
-        </el-col>
-    </el-row>
+    <div class="fflex mt15" style="align-items: stretch">
+    </div>
+    <sly-card title="Info"
+              subtitle="Labeler and video"
+              style="min-width: 310px; max-width: 310px;">
+        <div><b>Labeler</b>: {{data.userLogin}} (id={{data.userId}})</div>
+    </sly-card>
 </div>
