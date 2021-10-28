@@ -1,0 +1,16 @@
+{
+  "name": "Car driver - video tagging",
+  "type": "app",
+  "categories": [
+    "labeling",
+    "video"
+  ],
+  "description": "Working demo, use it as a template for your custom apps",
+  "docker_image": "supervisely/base-py-sdk:6.1.102",
+  "main_script": "src/main.py",
+  "gui_template": "src/gui.html",
+  "task_location": "workspace_tasks",
+  "isolate": true,
+  "icon": "https://img.icons8.com/color/100/000000/driver.png",
+  "icon_background": "#FFFFFF"
+}
