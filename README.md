@@ -3,7 +3,7 @@ Example of custom video labeling interface
 
 ## Screenshot
 
-<img src="https://i.imgur.com/SySjbgJ.png"/>
+<img src="media/s1.png"/>
 
 
 ## Video credits: 
